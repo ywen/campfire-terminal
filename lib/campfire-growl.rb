@@ -1,7 +1,1 @@
-require "campfire-growl/version"
-
-module Campfire
-  module Growl
-    # Your code goes here...
-  end
-end
+require File.dirname(__FILE__) + '/campfire_growl'
