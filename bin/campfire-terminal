@@ -1,13 +1,13 @@
 #!/usr/bin/env ruby
 $:.unshift(File.dirname(__FILE__) + '/../lib') unless $:.include?(File.dirname(__FILE__) + '/../lib')
-require 'campfile-growl'
+require 'campfire-terminal'
 require 'thor'
 
-class CampfireGrowlApp < Thor
+class CampfireTerminalApp < Thor
   desc "start", "start the server"
   def start
-    CampfireGrowl.start
+    CampfireTerminal::Main.start
   end
 end
 
-CampfireGrowlApp.start
+CampfireTerminalApp.start

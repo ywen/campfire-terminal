@@ -1,6 +1,8 @@
-require "campfire_growl/version"
+require "campfire_terminal/version"
 
-module Campfire
-  module Growl
+module CampfireTerminal
+  module Main
+    def start
+    end
   end
 end
