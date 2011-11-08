@@ -1,3 +1,3 @@
-campfire-growl -- Pulls the canpfire messages and display using Growl
+campfire-terminal -- Pulls the campfire messages and streaming in a terminal window
 ====================================
 
