@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "campfire-terminal/version"
+require "campfire_terminal/version"
 
 Gem::Specification.new do |s|
   s.name        = "campfire-terminal"
