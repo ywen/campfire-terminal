@@ -3,6 +3,12 @@ module CampfireTerminal
   describe Main do
     describe ".start" do
       let(:config) {double :config}
+      let(:streaming) {double :streaming, :start => true}
+      before(:each) do
+        Config.stub(:new).and_return config
+        Streaming.stub(:new).and_return streaming
+      end
+      
       after(:each) do
         Main.start
       end
@@ -16,6 +22,14 @@ module CampfireTerminal
           ENV["CAMPFIRE_TERMINAL_CONFIG_FILE_LOCATION"] = "some_dir"
           Config.should_receive(:new).with("some_dir").and_return config
         end
+      end
+
+      it "should initialize a streaming object" do
+        Streaming.should_receive(:new).with(config).and_return streaming
+      end
+
+      it "should start the streaming" do
+        streaming.should_receive :start
       end
     end
   end
