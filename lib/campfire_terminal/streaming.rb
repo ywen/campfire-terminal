@@ -8,6 +8,9 @@ module CampfireTerminal
 
     def start
       url = config.streaming_url
+      StreamingMessage.streaming(url) do |message|
+        puts message.message
+      end
     end
   end
 end
