@@ -1,5 +1,9 @@
 require "campfire_terminal/version"
 require "rest_resource"
+require 'active_support/inflector'
+require 'active_support/core_ext/string'
+require 'active_support/json'
+require "yajl/http_stream"
 
 module CampfireTerminal
   module Main
