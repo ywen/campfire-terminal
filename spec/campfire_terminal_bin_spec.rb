@@ -4,8 +4,8 @@ load File.expand_path(File.join(File.dirname(__FILE__), "..", "bin", "campfire-t
 describe 'CampfireTerminal bin' do
   describe "when pased in start sub command" do
     it "should call start" do
-      CampfireTerminal::Main.should_receive(:start)
-      CampfireTerminalApp.start(["start"])
+      CampfireTerminal::Main.should_receive(:start).with(2341)
+      CampfireTerminalApp.start(["start", 2341])
     end
   end
 end

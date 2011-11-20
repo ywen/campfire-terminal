@@ -1,4 +1,5 @@
 module CampfireTerminal
-  class StreamingMessage
+  class StreamingMessage < RestResource::Resource
+
   end
 end

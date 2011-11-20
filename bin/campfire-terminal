@@ -5,8 +5,8 @@ require 'thor'
 
 class CampfireTerminalApp < Thor
   desc "start", "start the server"
-  def start
-    CampfireTerminal::Main.start
+  def start(room_id)
+    CampfireTerminal::Main.start room_id
   end
 end
 
