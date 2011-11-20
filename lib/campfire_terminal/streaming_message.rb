@@ -7,5 +7,9 @@ module CampfireTerminal
         end
       end
     end
+
+    def message
+      body
+    end
   end
 end

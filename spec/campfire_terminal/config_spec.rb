@@ -8,7 +8,7 @@ module CampfireTerminal
     end
      describe "#streaming_url" do
        it "should return the straming url" do
-         subject.streaming_url.should == URI.parse("http://a_token:x@streaming.campfirenow.com//room/1234/live.json")
+         subject.streaming_url.should == URI.parse("http://a_token:x@streaming.campfirenow.com/room/1234/live.json")
        end
      end
 

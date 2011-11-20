@@ -9,12 +9,12 @@ module CampfireTerminal
     end
 
     def streaming_url
-      URI.parse(%Q|http://#{config_info["authentication"]["token"]}:x@streaming.campfirenow.com//room/#{room_id}/live.json|)
+      URI.parse(%Q|http://#{config_info["authentication"]["token"]}:x@streaming.campfirenow.com/room/#{room_id}/live.json|)
     end
 
     private
     def config_info
-      YAML.load_file("#{base_dir}/.campfire_terminal.yml")
+      YAML.load_file("#{File.expand_path(base_dir)}/.campfire_terminal.yml")
     end
   end
 end

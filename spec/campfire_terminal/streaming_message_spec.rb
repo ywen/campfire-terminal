@@ -4,6 +4,7 @@ module CampfireTerminal
     let(:json_hash) {{"user_id" => "234", "body" => "a message"}}
     let(:json_string) {json_hash.to_json}
     let( :streaming_message ) {double :streaming_message}
+    subject {StreamingMessage.new json_string}
     describe "#streaming" do
       before(:each) do
         Yajl::HttpStream.stub(:get).and_yield json_string
@@ -17,6 +18,12 @@ module CampfireTerminal
       it "should build a new message object and yield to it" do
         StreamingMessage.should_receive(:new).with(json_string).and_return streaming_message
         StreamingMessage.streaming("url") {|message| message.should == streaming_message}
+      end
+    end
+
+    describe "#message" do
+      it "should reuturn the body" do
+        subject.message.should == "a message"
       end
     end
   end
